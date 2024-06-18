@@ -1,0 +1,22 @@
+{% extends "Anotacoes/modelo.html" %}
+{% load static %}
+{% load bootstrap3 %}
+
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h2>Excluir tarefa:</h2>
+    </div>
+    
+    <div class="panel panel-danger">
+        <p>Deseja realmente excluir a tarefa "<strong>{{ task }}</strong>"?</p>
+        <hr>
+        <form action="{% url 'delete_task' task.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            <a href="{% url 'tasks' %}" class="btn btn-default">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock content %}

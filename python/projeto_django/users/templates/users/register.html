@@ -1,0 +1,21 @@
+{% extends "Anotacoes/modelo.html" %}
+{% load bootstrap3 %}
+
+
+{% block header %}
+    <h1>Criar conta</h1>
+
+{% endblock header %}
+
+{% block content %}
+    {% if form.errors %}
+        <p class="erro_aviso" style="color: red;">* O nome do usuário não deve conter caracteres especiais. </p>
+    {% endif %}
+    <form action="{% url 'register' %}" method="post" class="ul_none">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button name="submit" class="btn btn-primary">Cadastrar</button>
+        <input type="hidden" name="next" value="{% url 'index' %}"/>
+    </form>
+
+{% endblock content %}

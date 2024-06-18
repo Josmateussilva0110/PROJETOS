@@ -1,0 +1,34 @@
+{% extends "Anotacoes/modelo.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1><a href="{% url 'tasks' %}">{{ task }}</a></h1>
+    </div>
+    
+    <ul class="list-group">
+        {% for n in notations %}
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-9">
+                        <h4>{{ n.text|linebreaks }}</h4>
+                    </div>
+                    <div class="col-md-3 text-right">
+                        <div class="btn-group" role="group" aria-label="Notation Actions">
+                            <a href="{% url 'edit_notation' n.id %}" class="btn btn-warning btn-sm">Editar anotação</a>
+                            <a href="{% url 'delete_notation' n.id %}" class="btn btn-danger btn-sm">Excluir</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% empty %}
+            <li class="list-group-item">Não há anotações adicionadas.</li>
+        {% endfor %}
+    </ul>
+    
+    <div class="text-center">
+        <a href="{% url 'new_notation' task.id %}" class="btn btn-primary">Adicionar Anotação</a>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "Anotacoes/modelo.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h2>Adicione uma tarefa</h2>
+    </div>
+    
+    <form action="{% url 'new_task' %}" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button name="submit" class="btn btn-success btn-sm">Adicionar</button>
+    </form>
+</div>
+{% endblock content %}

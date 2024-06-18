@@ -1,0 +1,22 @@
+{% extends "Anotacoes/modelo.html" %}
+{% load bootstrap3 %}
+
+{% block content %}
+<div>
+    <div class="page-header">
+        <h1>Tarefas Concluídas:</h1>
+    </div>
+
+    <ul class="list-group">
+        {% for task in tasks %}
+            <li class="list-group-item">
+                <h4>
+                    <a href="{% url 'restore_task' task.id %}">{{ task }} - {{ task.date }}</a>
+                </h4>
+            </li>
+        {% empty %}
+            <li class="list-group-item">Não há tarefas completa.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

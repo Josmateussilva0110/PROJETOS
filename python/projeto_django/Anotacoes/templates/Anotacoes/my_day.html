@@ -1,0 +1,27 @@
+{% extends "Anotacoes/modelo.html" %}
+{% load bootstrap3 %}
+
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h1>Tarefas do dia: </h1>
+    </div>
+
+    <ul class="list-group">
+        {% for task in tasks %}
+            <li class="list-group-item">
+                <h4>
+                    <a href="{% url 'task' task.id %}">{{ task }} - {{ task.date }}</a>
+                    <div class="btn-group pull-right" role="group" aria-label="Task Actions">
+                        <a href="{% url 'delete_task' task.id %}" class="btn btn-danger btn-sm">Excluir</a>
+                        <a href="{% url 'mark_completed' task.id %}" class="btn btn-success btn-sm">Concluir </a>
+                    </div>
+                </h4>
+            </li>
+        {% empty %}
+            <li class="list-group-item">Não há tarefas adicionadas.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends "Anotacoes/modelo.html" %}
+{% load static %}
+{% load bootstrap3 %}
+
+
+
+{% block content %}
+<div class="container">
+    <div class="page-header">
+        <h2>Marcar como importante:</h2>
+    </div>
+    
+    <div class="panel panel-danger">
+        <p>Deseja marcar a tarefa "<strong>{{ task }}</strong>" como importante ?</p> 
+        <hr>
+        <form action="{% url 'mark_important' task.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success btn-sm">Sim</button>
+            <a href="{% url 'tasks' %}" class="btn btn-default">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock content %}

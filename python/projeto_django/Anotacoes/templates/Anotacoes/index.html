@@ -1,0 +1,25 @@
+{% extends "Anotacoes/modelo.html" %}
+
+
+{% block header %}
+    <div class="jumbotron">
+        <h1>Acompanhe suas anotações.</h1>
+    </div>
+{% endblock header %}
+
+{% block content %} 
+    {% if user.is_authenticated %}
+        <h3>
+            Sempre que você tiver uma coisa importante para fazer venha aqui e anote.
+        </h3>
+    {% else %}
+        <h3>
+            <a href="{% url 'register' %}">Crie uma conta</a> para utilizar o anotações.
+        </h3>
+        <h3>
+            Sempre que você tiver uma coisa importante para fazer venha aqui e anote.
+        </h3>
+    {% endif %}
+
+{% endblock content %}
+
