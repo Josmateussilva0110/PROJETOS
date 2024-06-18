@@ -3,17 +3,15 @@ Este aplicativo baseado em Django foi desenvolvido para ajudar os usuários a ge
 
 # Funcionalidades  
 
-Autenticação de Usuário: Funcionalidade segura de login e logout.
-Gerenciamento de Tarefas:
-Criar, visualizar, editar e excluir tarefas.
-Marcar tarefas como importantes.
-Marcar tarefas como concluídas.
-Restaurar tarefas concluídas para o status ativo.
+• Autenticação de Usuário Funcionalidade segura de login e logout.  
+• Criar, visualizar, editar e excluir tarefas.  
+• Marcar tarefas como importantes.  
+• Marcar tarefas como concluídas.  
+• Restaurar tarefas concluídas para o status ativo.  
 
-Gerenciamento de Anotações:
-Adicionar anotações às tarefas.
-Editar e excluir anotações.
-Filtragem de Tarefas:
-Visualizar tarefas do dia atual.
-Visualizar tarefas importantes.
-Visualizar tarefas concluídas.
+### Gerenciamento de Anotações:
+• Adicionar anotações às tarefas.  
+• Editar e excluir anotações.   
+• Visualizar tarefas do dia atual.  
+• Visualizar tarefas importantes.  
+• Visualizar tarefas concluídas.  
