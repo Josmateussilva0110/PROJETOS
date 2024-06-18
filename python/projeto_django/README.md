@@ -15,3 +15,31 @@ Este aplicativo baseado em Django foi desenvolvido para ajudar os usuários a ge
 • Visualizar tarefas do dia atual.  
 • Visualizar tarefas importantes.  
 • Visualizar tarefas concluídas.  
+
+# Instalação  
+• Python 3.6+  
+• Django 3.0+  
+• Uma ferramenta de ambiente virtual como 'venv'  
+
+# Como usar  
+```python
+  git clone https://github.com/seuusuario/anotacoes.git
+cd anotacoes
+```
+
+```python
+  python -m venv venv
+source venv/bin/activate  # No Windows, use `venv\Scripts\activate`
+```
+
+```python
+  python manage.py createsuperuser
+```
+
+```python
+  python manage.py runserver
+```
+
+```python
+  Abra o navegador e vá para http://127.0.0.1:8000.
+```
